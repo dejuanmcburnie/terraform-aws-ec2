@@ -1,11 +1,3 @@
-variable "region" {
-  type = string
-}
-
-variable "vpcid" {
-  type = string
-}
-
 variable "name" {
   type = string
 }
