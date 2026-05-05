@@ -4,7 +4,7 @@ variable "ami_id" {}
 variable "vpc_id" {}
 variable "subnet_id" {}
 variable "instance_type" {}
-variable "security_group_id" {}
+variable "security_group_ids" {}
 variable "key_name" {}
 variable "tags" {type = map(string) }
 variable "remotestatekey" {}
