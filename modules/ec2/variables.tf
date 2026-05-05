@@ -1,30 +1,10 @@
-variable "name" {
-  type = string
-}
-
-variable "ami_id" {
-  type = string
-}
-
-variable "instance_type" {
-  type    = string
-  default = "t3.micro"
-}
-
-variable "subnet_id" {
-  type = string
-}
-
-variable "security_group_ids" {
-  type = list(string)
-}
-
-variable "key_name" {
-  type    = string
-  default = null
-}
-
-variable "tags" {
-  type    = map(string)
-  default = {}
-}
+variable "region" {}
+variable "ec2instancename" {}
+variable "amiid" {}
+variable "vpcid" {}
+variable "subnetid" {}
+variable "instancetype" {}
+variable "securitygroupid" {}
+variable "keyname" {}
+variable "tags" {type = map(string) }
+variable "remotestatekey" {}
