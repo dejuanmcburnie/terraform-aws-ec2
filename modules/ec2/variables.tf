@@ -8,3 +8,9 @@ variable "security_group_ids" {}
 variable "key_name" {}
 variable "tags" {type = map(string) }
 variable "remotestatekey" {}
+variable "ec2instancename" {}
+variable "amiid" {}
+variable "subnetid" {}
+variable "instancetype" {}
+variable "securitygroupid" {}
+variable "keyname" {}
