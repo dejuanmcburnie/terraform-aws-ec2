@@ -7,4 +7,10 @@ resource "aws_instance" "this" {
 
   key_name = var.key_name
 
+  tags = merge(
+    {
+      Name = var.name
+    },
+    var.tags
+  )
 }
