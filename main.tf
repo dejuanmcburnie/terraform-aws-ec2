@@ -38,10 +38,6 @@ locals {
   )
 }
 
-data "aws_iam_instance_profile" "existing" {
-  name = "AmazonSSMRoleForinstancesQuickSetup"
-}
-
 resource "aws_instance" "this" {
   ami                         = local.selected_ami_id
   instance_type               = var.instance_type
@@ -51,7 +47,7 @@ resource "aws_instance" "this" {
   associate_public_ip_address = var.associate_public_ip_address
   user_data                   = var.user_data
 
-  iam_instance_profile = data.aws_iam_instance_profile.existing.name
+  iam_instance_profile = AmazonSSMRoleForinstancesQuickSetup
 
   root_block_device {
     volume_size = var.root_volume_size
