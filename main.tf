@@ -49,7 +49,6 @@ resource "aws_instance" "this" {
   vpc_security_group_ids      = var.vpc_security_group_ids
   key_name                    = var.key_name
   associate_public_ip_address = var.associate_public_ip_address
-  iam_instance_profile        = var.iam_instance_profile
   user_data                   = var.user_data
 
   iam_instance_profile = data.aws_iam_instance_profile.existing.name
