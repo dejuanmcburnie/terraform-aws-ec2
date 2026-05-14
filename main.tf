@@ -47,7 +47,7 @@ resource "aws_instance" "this" {
   associate_public_ip_address = var.associate_public_ip_address
   user_data                   = var.user_data
 
-  iam_instance_profile = AmazonSSMRoleForinstancesQuickSetup
+  iam_instance_profile = "AmazonSSMRoleForinstancesQuickSetup"
 
   root_block_device {
     volume_size = var.root_volume_size
