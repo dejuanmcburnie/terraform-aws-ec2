@@ -43,7 +43,7 @@ data "aws_iam_role" "ssm" {
 }
 
 resource "aws_iam_instance_profile" "ssm" {
-  name = "paycycle-ssm-instance-profile-2026"
+  name = "${var.name}-ssm-instance-profile"
   role = data.aws_iam_role.ssm.name
 }
 
