@@ -38,6 +38,15 @@ locals {
   )
 }
 
+data "aws_iam_role" "ssm" {
+  name = "AmazonSSMRoleForInstancesQuickSetup"
+}
+
+resource "aws_iam_instance_profile" "ssm" {
+  name = "ec2-ssm-instance-profile"
+  role = data.aws_iam_role.ssm.name
+}
+
 resource "aws_instance" "this" {
   ami                         = local.selected_ami_id
   instance_type               = var.instance_type
@@ -47,7 +56,7 @@ resource "aws_instance" "this" {
   associate_public_ip_address = var.associate_public_ip_address
   user_data                   = var.user_data
 
-  iam_instance_profile = "AmazonSSMRoleForinstancesQuickSetup"
+  iam_instance_profile = aws_iam_instance_profile.ssm.name
 
   root_block_device {
     volume_size = var.root_volume_size
