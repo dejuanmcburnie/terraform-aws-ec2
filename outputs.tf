@@ -1,24 +1,24 @@
 output "instance_id" {
   description = "EC2 instance ID."
-  value       = aws_instance.this.id
+  value       = aws_instance.deployec2.id
 }
 
 output "instance_arn" {
   description = "EC2 instance ARN."
-  value       = aws_instance.this.arn
+  value       = aws_instance.deployec2.arn
 }
 
 output "private_ip" {
   description = "Private IP address of the EC2 instance."
-  value       = aws_instance.this.private_ip
+  value       = aws_instance.deployec2.private_ip
 }
 
 output "public_ip" {
   description = "Public IP address of the EC2 instance, if assigned."
-  value       = aws_instance.this.public_ip
+  value       = aws_instance.deployec2.public_ip
 }
 
 output "ami_id" {
   description = "AMI ID used by the instance."
-  value       = aws_instance.this.ami
+  value       = aws_instance.deployec2.ami
 }
