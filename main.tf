@@ -47,7 +47,7 @@ resource "aws_iam_instance_profile" "ssm" {
   role = data.aws_iam_role.ssm.name
 }
 
-resource "aws_instance" "this" {
+resource "aws_instance" "deployec2" {
   ami                         = local.selected_ami_id
   instance_type               = var.instance_type
   subnet_id                   = var.subnet_id
